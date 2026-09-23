@@ -1,0 +1,39 @@
+name: Extract AURA MUSIC
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Extract project ZIP
+        run: |
+          rm -rf extracted
+          mkdir extracted
+
+          unzip -q "AURA-MUSIC (2).zip" -d extracted
+
+          if [ -d "extracted/AURA-MUSIC" ]; then
+            cp -r extracted/AURA-MUSIC/. .
+          else
+            cp -r extracted/. .
+          fi
+
+          rm -rf extracted
+          rm -f "AURA-MUSIC (2).zip"
+
+      - name: Commit extracted project
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "Extract AURA MUSIC project" || echo "Nothing to commit"
+          git push
