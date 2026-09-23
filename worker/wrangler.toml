@@ -1,0 +1,41 @@
+name = "aura-music-api"
+main = "src/index.js"
+compatibility_date = "2024-09-01"
+workers_dev = true
+
+# ---------------------------------------------------------
+# D1 database binding
+# Replace <DATABASE_ID> with the id from:
+#   npx wrangler d1 create aura-db
+# ---------------------------------------------------------
+[[d1_databases]]
+binding = "DB"
+database_name = "aura-db"
+database_id = "<DATABASE_ID>"
+
+# ---------------------------------------------------------
+# R2 bucket binding (audio + cover art)
+# Replace <ACCOUNT_ID> and the bucket name with yours.
+# The bucket itself is created in the Cloudflare dashboard.
+# ---------------------------------------------------------
+[[r2_buckets]]
+binding = "MEDIA"
+bucket_name = "aura-music-media"
+
+# ---------------------------------------------------------
+# Secrets — NEVER put these in this file. Set them with:
+#   npx wrangler secret put ADMIN_SETUP_KEY
+#   npx wrangler secret put SESSION_SECRET
+# Optional:
+#   npx wrangler secret put ALLOW_RESET_DISPLAY   (value: true, only while you need password reset links shown)
+# ---------------------------------------------------------
+
+[vars]
+# Comma-separated list of origins allowed to call the API with credentials.
+# Add your Cloudflare Pages domains here after deploying the frontends,
+# e.g. "https://aura-user.pages.dev,https://aura-admin.pages.dev,http://localhost:8080"
+ALLOWED_ORIGINS = "*"
+# Max audio upload size in bytes (default 60 MB)
+MAX_AUDIO_SIZE = "62914560"
+# Max cover image size in bytes (default 10 MB)
+MAX_IMAGE_SIZE = "10485760"

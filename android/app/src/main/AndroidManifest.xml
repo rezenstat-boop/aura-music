@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.auramusic.app">
+
+    <!-- Internet is required to reach the Cloudflare Worker API and Pages frontend -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- Keeps audio playing when the screen is off while the app is in foreground -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="AURA MUSIC"
+        android:theme="@style/Theme.AuraMusic"
+        android:hardwareAccelerated="true"
+        android:usesCleartextTraffic="false">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

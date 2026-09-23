@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0d0b14" />
+  <title>AURA MUSIC — Admin</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%237c3aed'/%3E%3Cpath d='M42 30 L70 50 L42 70 Z' fill='white'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="css/admin.css" />
+</head>
+<body>
+  <!-- Login / setup screen -->
+  <div id="auth-screen" class="auth-wrap">
+    <div class="auth-card" id="auth-card"></div>
+  </div>
+
+  <!-- Admin shell -->
+  <div id="admin-app" class="hidden">
+    <aside id="admin-sidebar">
+      <a class="brand" href="#/dashboard">
+        <svg viewBox="0 0 100 100"><rect width="100" height="100" rx="20" fill="rgba(255,255,255,.08)"/><path d="M42 30 L70 50 L42 70 Z" fill="currentColor"/></svg>
+        <span>AURA <small>ADMIN</small></span>
+      </a>
+      <nav id="admin-nav">
+        <a href="#/dashboard" data-nav="dashboard">Dashboard</a>
+        <a href="#/songs" data-nav="songs">Songs</a>
+        <a href="#/artists" data-nav="artists">Artists</a>
+        <a href="#/albums" data-nav="albums">Albums</a>
+        <a href="#/playlists" data-nav="playlists">Playlists</a>
+        <a href="#/users" data-nav="users">Users</a>
+        <a href="#/genres" data-nav="genres">Genres</a>
+        <a href="#/moods" data-nav="moods">Moods</a>
+        <a href="#/home-sections" data-nav="home-sections">Home Management</a>
+        <a href="#/subscriptions" data-nav="subscriptions">Subscriptions</a>
+        <a href="#/notifications" data-nav="notifications">Notifications</a>
+        <a href="#/storage" data-nav="storage">Storage</a>
+        <a href="#/settings" data-nav="settings">Settings</a>
+        <button id="admin-logout" class="nav-btn">Log out</button>
+      </nav>
+    </aside>
+    <main id="admin-main">
+      <div id="admin-view"></div>
+    </main>
+  </div>
+
+  <div id="toast-container"></div>
+  <div id="modal-root" class="hidden"></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/songs.js"></script>
+  <script src="js/artists.js"></script>
+  <script src="js/albums.js"></script>
+  <script src="js/playlists.js"></script>
+  <script src="js/users.js"></script>
+  <script src="js/settings.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "name": "aura-music-api",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "db:init:local": "wrangler d1 execute aura-db --file=./schema.sql --local",
+    "db:init:remote": "wrangler d1 execute aura-db --file=./schema.sql --remote"
+  },
+  "devDependencies": {
+    "wrangler": "^3.90.0"
+  }
+}

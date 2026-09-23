@@ -1,0 +1,35 @@
+// AURA MUSIC — app-level build.gradle
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.auramusic.app'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.auramusic.app"
+        minSdk 24          // Android 7.0+ (covers virtually all active devices)
+        targetSdk 34
+        versionCode 1
+        versionName "1.0.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt')
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    // No third-party dependencies — the app is a thin WebView shell.
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+}

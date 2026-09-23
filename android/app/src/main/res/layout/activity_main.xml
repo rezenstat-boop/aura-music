@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0d0b14">
+
+    <WebView
+        android:id="@+id/webview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- Splash overlay: visible on top of the WebView at launch,
+         then hidden by the theme as soon as the page paints. -->
+    <LinearLayout
+        android:id="@+id/splash_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:background="#0d0b14">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="AURA MUSIC"
+            android:textColor="#a78bfa"
+            android:letterSpacing="0.3"
+            android:textSize="22sp" />
+        <ProgressBar
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="24dp"
+            android:indeterminateTint="#7c3aed" />
+    </LinearLayout>
+</FrameLayout>
