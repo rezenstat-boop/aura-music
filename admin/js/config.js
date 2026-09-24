@@ -1,5 +1,5 @@
 // AURA MUSIC — admin panel configuration (public values only, NO secrets)
-const API_BASE_URL = 'https://aura-music.subhajitghosh20001.workers.dev'; // wrangler dev default — change to your Worker URL in production
+const API_BASE_URL = 'https://aura-music-api.subhajitghosh20001.workers.dev/'; // wrangler dev default — change to your Worker URL in production
 const APP_NAME = 'AURA MUSIC';
 
 function mediaUrl(key) { return `${API_BASE_URL}/media/raw/${key}`; }
